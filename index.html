@@ -20,28 +20,89 @@
       --rule-red:     #c0392b;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Calibri', 'Gill Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
-    #password-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: var(--cream); padding: 24px; }
-    #password-screen h2 { font-size: 1.8rem; font-weight: normal; color: var(--blue-deep); margin-bottom: 8px; }
-    #password-screen p { color: var(--text-light); font-style: italic; margin-bottom: 24px; }
-    #password-screen input { font-family: 'Calibri', sans-serif; font-size: 1rem; padding: 12px 16px; border: 2px solid var(--sand-dark); border-radius: 8px; width: 260px; margin-bottom: 12px; outline: none; text-align: center; letter-spacing: 0.1em; }
-    #password-screen input:focus { border-color: var(--blue-mid); }
-    #password-screen button { background: var(--blue-deep); color: white; border: none; border-radius: 8px; padding: 12px 32px; font-size: 1rem; font-family: 'Calibri', sans-serif; cursor: pointer; width: 260px; }
-    #password-screen button:hover { background: var(--blue-mid); }
-    #password-screen .error { color: var(--rule-red); font-size: 0.9rem; margin-top: 8px; display: none; }
-    #main-content { display: none; }
-    header { position: relative; overflow: hidden; text-align: center; padding: 360px 24px 320px; color: var(--white); }
-    .header-bg { position: absolute; inset: 0; background-image: url('./fowey.jpg'); background-size: cover; background-position: center; z-index: 0; }
-    .header-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.12); z-index: 1; }
-    header::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 60px; background: var(--cream); clip-path: ellipse(55% 100% at 50% 100%); z-index: 2; }
-    header .header-content { position: relative; z-index: 3; }
+    body {
+      font-family: 'Calibri', 'Gill Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    header {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 260px 24px 220px;
+      color: var(--white);
+    }
+    .header-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('./fowey.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+    .header-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.12);
+      z-index: 1;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 60px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+      z-index: 2;
+    }
+    header .header-content {
+      position: relative;
+      z-index: 3;
+    }
     .wave-emoji { font-size: 2.4rem; display: block; margin-bottom: 12px; }
-    header h1 { font-size: 2.6rem; font-weight: normal; letter-spacing: 0.02em; margin-bottom: 8px; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
-    header p.subtitle { font-size: 1.1rem; opacity: 0.95; font-style: italic; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
-    nav { background: var(--white); border-bottom: 2px solid var(--blue-light); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(42,107,138,0.10); }
-    .nav-scroll { display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 12px; }
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: normal;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+    header p.subtitle {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      font-style: italic;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    }
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--blue-light);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(42,107,138,0.10);
+    }
+    .nav-scroll {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 0 12px;
+    }
     .nav-scroll::-webkit-scrollbar { display: none; }
-    nav a { color: var(--blue-deep); text-decoration: none; font-family: 'Calibri', 'Gill Sans', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding: 14px 14px; white-space: nowrap; border-bottom: 3px solid transparent; transition: border-color 0.2s, color 0.2s; }
+    nav a {
+      color: var(--blue-deep);
+      text-decoration: none;
+      font-family: 'Calibri', 'Gill Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 14px 14px;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
     nav a:hover { border-bottom-color: var(--accent); color: var(--accent); }
     .section { max-width: 860px; margin: 0 auto; padding: 52px 24px 20px; }
     .section + .section { border-top: 1px solid var(--sand-dark); margin-top: 8px; }
@@ -90,25 +151,17 @@
 </head>
 <body>
 
-<div id="password-screen">
-  <span style="font-size:2.5rem;margin-bottom:16px;">🌊</span>
-  <h2>Flat 2, 42 Esplanade</h2>
-  <p>Fowey, Cornwall — Guest Guide</p>
-  <input type="password" id="pwd-input" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkPassword()" />
-  <button onclick="checkPassword()">Enter</button>
-  <p class="error" id="pwd-error">Incorrect password — please try again</p>
-</div>
-
-<div id="main-content">
+<!-- HEADER -->
 <header>
   <div class="header-bg"></div>
   <div class="header-overlay"></div>
   <div class="header-content">
-    <span class="wave-emoji">🌊</span>
     <h1>Flat 2, 42 Esplanade</h1>
     <p class="subtitle">Fowey, Cornwall</p>
   </div>
 </header>
+
+<!-- NAV -->
 <nav>
   <div class="nav-scroll">
     <a href="#getting-here">📍 Getting Here</a>
@@ -125,22 +178,26 @@
     <a href="#rules">📋 House Rules</a>
   </div>
 </nav>
+
+<!-- GETTING HERE -->
 <section class="section" id="getting-here">
   <div class="section-header"><span class="section-icon">📍</span><h2>Getting Here</h2></div>
   <div class="card">
     <h3>Address</h3>
-    <p><strong>Flat 2, 42 Esplanade<br>Fowey, Cornwall<br>PL23 1HY</strong></p>
+    <p><strong>Flat 2, 42 Esplanade<br>Fowey, Cornwall<br>PL23 1HZ</strong></p>
     <div class="tip"><strong>Tip:</strong> Use the postcode above in Google Maps or Apple Maps. Park in the parking spaces behind our flat — the two spaces to the right-hand side belong to us.</div>
   </div>
   <div class="card">
     <h3>🚂 By Train</h3>
     <ul>
-      <li>Nearest station on the main <strong>London Paddington</strong> line</li>
-      <li>5 minutes by taxi to the flat</li>
+      <li>Nearest station: <strong>Par</strong> — on the main <strong>London Paddington</strong> line</li>
+      <li>About 5 minutes by taxi to the flat</li>
       <li>Taxi: <strong>Yeo's Taxis</strong></li>
     </ul>
   </div>
 </section>
+
+<!-- ACCESS -->
 <section class="section" id="access">
   <div class="section-header"><span class="section-icon">🔑</span><h2>Getting In</h2></div>
   <div class="keybox-box">
@@ -158,128 +215,268 @@
     </ol>
   </div>
 </section>
+
+<!-- WALKS -->
 <section class="section" id="walks">
   <div class="section-header"><span class="section-icon">🥾</span><h2>Best Walks Nearby</h2></div>
   <p style="margin-bottom: 18px; color: var(--text-light); font-style: italic;">Fowey sits on the South West Coast Path — some of the most spectacular walking in England is right on your doorstep.</p>
-  <div class="place-card green"><h4>Fowey to Polkerris — Coastal Path</h4><div class="tags"><span class="tag green-tag">4.5 miles</span><span class="tag green-tag">Moderate</span></div><p>Head west along the coast path from Readymoney Cove through dramatic cliff scenery to the lovely harbour at Polkerris. Grab a pasty at Sam's on the Beach.</p></div>
-  <div class="place-card green"><h4>Hall Walk — Fowey Estuary Circular</h4><div class="tags"><span class="tag green-tag">4 miles circular</span><span class="tag green-tag">Easy–Moderate</span><span class="tag green-tag">Family-friendly</span></div><p>Take the passenger ferry to Polruan, walk through the woods along Hall Walk with stunning estuary views, descend to Bodinnick, and take the car ferry back.</p></div>
-  <div class="place-card green"><h4>Readymoney Cove & St Catherine's Castle</h4><div class="tags"><span class="tag green-tag">1.5 miles</span><span class="tag green-tag">Easy</span></div><p>A gentle stroll down to the pretty sandy cove at Readymoney, then up to the Tudor fort for panoramic views of the harbour mouth.</p></div>
-  <div class="place-card green"><h4>Fowey to Lostwithiel — River Walk</h4><div class="tags"><span class="tag green-tag">6 miles one way</span><span class="tag green-tag">Easy</span></div><p>Follow the Fowey river upstream through tidal creeks and ancient woodland to historic Lostwithiel. Train back from Lostwithiel to Par.</p></div>
+  <div class="place-card green">
+    <h4><a href="https://www.southwestcoastpath.org.uk/walksdb/394/" target="_blank" style="color:var(--text);text-decoration:none;">Fowey to Polkerris — Coastal Path ↗</a></h4>
+    <div class="tags"><span class="tag green-tag">4.5 miles</span><span class="tag green-tag">Moderate</span></div>
+    <p>Head west along the coast path from Readymoney Cove through dramatic cliff scenery to the lovely harbour at Polkerris. Grab a pasty at Sam's on the Beach.</p>
+  </div>
+  <div class="place-card green">
+    <h4><a href="https://www.nationaltrust.org.uk/visit/cornwall/hall-walk" target="_blank" style="color:var(--text);text-decoration:none;">Hall Walk — Fowey Estuary Circular ↗</a></h4>
+    <div class="tags"><span class="tag green-tag">4 miles circular</span><span class="tag green-tag">Easy–Moderate</span><span class="tag green-tag">Family-friendly</span></div>
+    <p>Take the passenger ferry to Polruan, walk through the woods along Hall Walk with stunning estuary views, descend to Bodinnick, and take the car ferry back.</p>
+  </div>
+  <div class="place-card green">
+    <h4><a href="https://www.visitfowey.co.uk/walking-around-fowey/" target="_blank" style="color:var(--text);text-decoration:none;">Readymoney Cove & St Catherine's Castle ↗</a></h4>
+    <div class="tags"><span class="tag green-tag">1.5 miles</span><span class="tag green-tag">Easy</span></div>
+    <p>A gentle stroll down to the pretty sandy cove at Readymoney, then up to the Tudor fort for panoramic views of the harbour mouth.</p>
+  </div>
+  <div class="place-card green">
+    <h4><a href="https://www.walkhighlands.co.uk/cornwall/fowey-to-lostwithiel.shtml" target="_blank" style="color:var(--text);text-decoration:none;">Fowey to Lostwithiel — River Walk ↗</a></h4>
+    <div class="tags"><span class="tag green-tag">6 miles one way</span><span class="tag green-tag">Easy</span></div>
+    <p>Follow the Fowey river upstream through tidal creeks and ancient woodland to historic Lostwithiel. Train back from Lostwithiel to Par.</p>
+  </div>
 </section>
+
+<!-- ACTIVITIES -->
 <section class="section" id="activities">
   <div class="section-header"><span class="section-icon">🏄</span><h2>Activities</h2></div>
   <div class="card-grid">
-    <div class="place-card accent" style="border-radius:8px"><h4>⛳ Golf</h4><div class="tags"><span class="tag accent-tag">Golf</span></div><p><strong>Carlyon Bay Golf Club</strong> — 18-hole cliff-top course near St Austell. About 15 mins drive. <em>carlyonbay.com</em></p></div>
+    <div class="place-card accent" style="border-radius:8px"><h4>⛳ Golf</h4><div class="tags"><span class="tag accent-tag">Golf</span><span class="tag accent-tag">15 mins</span></div><p><strong><a href="https://www.carlyonbay.com/golf/" target="_blank" style="color:var(--text);">Carlyon Bay Golf Club ↗</a></strong> — 18-hole cliff-top course near St Austell. Spectacular views over St Austell Bay.</p></div>
     <div class="place-card accent" style="border-radius:8px"><h4>🏊 Swimming</h4><div class="tags"><span class="tag accent-tag">Swimming</span></div><p><strong>Readymoney Cove</strong> — 10 min walk. <strong>Polkerris Beach</strong> — brilliant family beach. <strong>Par Sands</strong> — large sandy beach.</p></div>
-    <div class="place-card accent" style="border-radius:8px"><h4>🏄 Water Sports</h4><div class="tags"><span class="tag accent-tag">Adventure</span></div><p>Kayak and paddleboard hire from Town Quay. Sailing and SUP from Polkerris beach.</p></div>
-    <div class="place-card accent" style="border-radius:8px"><h4>🌿 Eden Project</h4><div class="tags"><span class="tag accent-tag">Day Out</span><span class="tag accent-tag">20 mins</span></div><p>The world-famous biomes are about 20 minutes away. Book tickets in advance. <em>edenproject.com</em></p></div>
-    <div class="place-card accent" style="border-radius:8px"><h4>🪂 Adrenaline Quarry</h4><div class="tags"><span class="tag accent-tag">Thrills</span><span class="tag accent-tag">20 mins</span></div><p>Zip lines, giant swings and adventure activities at a stunning flooded quarry near Liskeard. Great for families and thrill-seekers. <em>adrenalinequarry.co.uk</em></p></div>
-    <div class="place-card accent" style="border-radius:8px"><h4>🧗 Tide Climbing</h4><div class="tags"><span class="tag accent-tag">Climbing</span><span class="tag accent-tag">Outdoor</span></div><p>Sea cliff climbing experiences on Cornwall's stunning coastline. Suitable for beginners and experienced climbers alike. <em>tideclimbing.co.uk</em></p></div>
-    <div class="place-card accent" style="border-radius:8px"><h4>🌸 Duchy Nursery</h4><div class="tags"><span class="tag accent-tag">Garden</span><span class="tag accent-tag">Lostwithiel</span></div><p>A beautiful plant nursery near Lostwithiel — well worth a visit for garden lovers. Lovely setting with a great café. <em>duchynursery.co.uk</em></p></div>
+    <div class="place-card accent" style="border-radius:8px"><h4>🏄 Water Sports</h4><div class="tags"><span class="tag accent-tag">Adventure</span></div><p>Kayak and paddleboard hire from Town Quay. Sailing and SUP from <a href="https://www.polkerris.com/" target="_blank" style="color:var(--text);">Polkerris beach ↗</a>.</p></div>
+    <div class="place-card accent" style="border-radius:8px"><h4>🌿 Eden Project</h4><div class="tags"><span class="tag accent-tag">Day Out</span><span class="tag accent-tag">20 mins</span></div><p>The world-famous biomes are about 20 minutes away. Book tickets in advance at <a href="https://www.edenproject.com/" target="_blank" style="color:var(--text);">edenproject.com ↗</a>.</p></div>
+    <div class="place-card accent" style="border-radius:8px"><h4>🪂 Adrenaline Quarry</h4><div class="tags"><span class="tag accent-tag">Thrills</span><span class="tag accent-tag">20 mins</span></div><p>Zip lines, giant swings and adventure activities at a stunning flooded quarry near Liskeard. Book at <a href="https://www.adrenalinequarry.co.uk/" target="_blank" style="color:var(--text);">adrenalinequarry.co.uk ↗</a>.</p></div>
+    <div class="place-card accent" style="border-radius:8px"><h4>🧗 Tide Climbing</h4><div class="tags"><span class="tag accent-tag">Climbing</span><span class="tag accent-tag">Adventure</span></div><p>Indoor and outdoor climbing experiences. Great for all ages and abilities. Book at <a href="https://www.tideclimbing.com/" target="_blank" style="color:var(--text);">tideclimbing.com ↗</a>.</p></div>
+    <div class="place-card accent" style="border-radius:8px"><h4>🌸 Duchy Nursery</h4><div class="tags"><span class="tag accent-tag">Garden</span><span class="tag accent-tag">Café</span></div><p>Beautiful nursery and gardens with a lovely café. Perfect for a relaxed afternoon. See <a href="https://www.duchynursery.co.uk/" target="_blank" style="color:var(--text);">duchynursery.co.uk ↗</a>.</p></div>
     <div class="place-card accent" style="border-radius:8px"><h4>⛵ Boat Trips</h4><div class="tags"><span class="tag accent-tag">Boat</span></div><p>Estuary trips and seal-spotting tours from Town Quay. Check the board on arrival.</p></div>
-    <div class="place-card accent" style="border-radius:8px"><h4>🏛️ Lanhydrock House</h4><div class="tags"><span class="tag accent-tag">National Trust</span><span class="tag accent-tag">25 mins</span></div><p>Magnificent Victorian country house near Bodmin. Wonderful gardens and great café. <em>nationaltrust.org.uk</em></p></div>
+    <div class="place-card accent" style="border-radius:8px"><h4>🏛️ Lanhydrock House</h4><div class="tags"><span class="tag accent-tag">National Trust</span><span class="tag accent-tag">25 mins</span></div><p>Magnificent Victorian country house near Bodmin. Wonderful gardens and great café. <a href="https://www.nationaltrust.org.uk/visit/cornwall/lanhydrock" target="_blank" style="color:var(--text);">nationaltrust.org.uk ↗</a>.</p></div>
   </div>
 </section>
+
+<!-- RESTAURANTS -->
 <section class="section" id="restaurants">
   <div class="section-header"><span class="section-icon">🍽️</span><h2>Best Restaurants</h2></div>
   <p style="margin-bottom: 18px; color: var(--text-light); font-style: italic;">Fowey has a brilliant food scene for a small town. Book ahead in summer — it gets very busy.</p>
-  <div class="place-card"><h4><a href="https://www.narlarestaurant.co.uk/book-1" target="_blank" style="color:var(--text);text-decoration:none;">Narla ↗</a></h4><div class="tags"><span class="tag">Fine Dining</span><span class="tag">Michelin Recommended</span><span class="tag">Book Ahead</span></div><p>One of Fowey's most exciting restaurants — modern Cornish cooking from Charlie Walters. Michelin recommended. Book well in advance.</p></div>
-  <div class="place-card"><h4><a href="https://samscornwall.co.uk/fowey/bookings/" target="_blank" style="color:var(--text);text-decoration:none;">Sam's Fowey ↗</a></h4><div class="tags"><span class="tag">Lunch & Dinner</span><span class="tag">Seafood</span><span class="tag">Lively</span></div><p>A Fowey institution since 1987 — brilliant burgers, locally landed fish, lobster and mussels from their own day boat. Great cocktail bar too.</p></div>
-  <div class="place-card"><h4><a href="https://pintxofowey.co.uk/" target="_blank" style="color:var(--text);text-decoration:none;">Pintxo ↗</a></h4><div class="tags"><span class="tag">Tapas</span><span class="tag">Walk-ins Only</span><span class="tag">Esplanade</span></div><p>Lovely Spanish tapas and sherry bar on the Esplanade. No bookings needed — just turn up. Perfect for a relaxed evening.</p></div>
-  <div class="place-card"><h4><a href="https://www.harbourhotels.co.uk/our-hotels/cornwall/harbour-hotel-fowey/harbour-kitchen-bar-terrace" target="_blank" style="color:var(--text);text-decoration:none;">Harbour Hotel — Harbour Kitchen ↗</a></h4><div class="tags"><span class="tag">Dinner</span><span class="tag">Views</span><span class="tag">Smart Casual</span></div><p>Stunning harbour views from the terrace. Local seafood, steaks and seasonal dishes. Great for a special occasion dinner.</p></div>
-  <div class="place-card"><h4><a href="https://www.thekingofprussiafowey.com/" target="_blank" style="color:var(--text);text-decoration:none;">The King of Prussia ↗</a></h4><div class="tags"><span class="tag">Pub</span><span class="tag">Town Quay</span><span class="tag">British</span></div><p>Historic pub right on Town Quay — proper British food done brilliantly, with great ales and lovely estuary views. A Fowey classic.</p></div>
-  <div class="place-card"><h4><a href="https://havenersfowey.co.uk/" target="_blank" style="color:var(--text);text-decoration:none;">Havener's Bar & Grill ↗</a></h4><div class="tags"><span class="tag">Bar & Grill</span><span class="tag">Waterfront</span><span class="tag">St Austell Ales</span></div><p>Waterside bar and grill on Town Quay with one of the best views in Fowey. Seasonal pub classics, local seafood and excellent St Austell ales.</p></div>
-  <div class="place-card"><h4><a href="https://samphirefowey.co.uk/" target="_blank" style="color:var(--text);text-decoration:none;">Samphire ↗</a></h4><div class="tags"><span class="tag">Fine Dining</span><span class="tag">Waterfront</span><span class="tag">Seasonal</span></div><p>Relaxed coastal fine dining at The Old Quay House. Panoramic water views and a beautifully seasonal menu. Book ahead.</p></div>
-  <div class="place-card"><h4><a href="https://sunnyspice.com/" target="_blank" style="color:var(--text);text-decoration:none;">Sunny Spice ↗</a></h4><div class="tags"><span class="tag">Indian</span><span class="tag">South Indian</span><span class="tag">Fore Street</span></div><p>Wonderful South Indian food on Fore Street — a real local favourite. Contemporary Indian cooking with fresh Cornish ingredients.</p></div>
-  <div class="place-card"><h4><a href="https://samscornwall.co.uk/on-the-beach/" target="_blank" style="color:var(--text);text-decoration:none;">Sam's on the Beach, Polkerris ↗</a></h4><div class="tags"><span class="tag">Lunch & Dinner</span><span class="tag">Seafood</span><span class="tag">Beach</span></div><p>Right on the beach at Polkerris in a restored RNLI lifeboat house — amazing seafood, wood-fired pizza and brilliant burgers. Walk there via the coast path for bonus points.</p></div>
-  <div class="place-card"><h4><a href="https://app.tablein.com/booking/crown-inn-0" target="_blank" style="color:var(--text);text-decoration:none;">The Crown Inn, Lanlivery ↗</a></h4><div class="tags"><span class="tag">Pub</span><span class="tag">10 mins drive</span><span class="tag">Cornish</span></div><p>One of Cornwall's oldest and most loved pubs — a gorgeous stone inn in the village of Lanlivery. Cracking Cornish food and real ales. Well worth the trip.</p></div>
+  <div class="place-card">
+    <h4><a href="https://www.narlarestaurant.co.uk/book-1" target="_blank" style="color:var(--text);text-decoration:none;">Narla ↗</a></h4>
+    <div class="tags"><span class="tag">Fine Dining</span><span class="tag">Michelin Recommended</span><span class="tag">Book Ahead</span></div>
+    <p>One of Fowey's most exciting restaurants — modern Cornish cooking from Charlie Walters. Michelin recommended. Book well in advance.</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://samscornwall.co.uk/fowey/bookings/" target="_blank" style="color:var(--text);text-decoration:none;">Sam's Fowey ↗</a></h4>
+    <div class="tags"><span class="tag">Lunch & Dinner</span><span class="tag">Seafood</span><span class="tag">Lively</span></div>
+    <p>A Fowey institution since 1987 — brilliant burgers, locally landed fish, lobster and mussels from their own day boat. Great cocktail bar too.</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://pintxofowey.co.uk/" target="_blank" style="color:var(--text);text-decoration:none;">Pintxo ↗</a></h4>
+    <div class="tags"><span class="tag">Tapas</span><span class="tag">Walk-ins Only</span><span class="tag">Esplanade</span></div>
+    <p>Lovely Spanish tapas and sherry bar on the Esplanade. No bookings needed — just turn up. Perfect for a relaxed evening.</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://www.harbourhotels.co.uk/our-hotels/cornwall/harbour-hotel-fowey/harbour-kitchen-bar-terrace" target="_blank" style="color:var(--text);text-decoration:none;">Harbour Hotel — Harbour Kitchen ↗</a></h4>
+    <div class="tags"><span class="tag">Dinner</span><span class="tag">Views</span><span class="tag">Smart Casual</span></div>
+    <p>Stunning harbour views from the terrace. Local seafood, steaks and seasonal dishes. Great for a special occasion dinner.</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://www.thekingofprussiafowey.com/" target="_blank" style="color:var(--text);text-decoration:none;">The King of Prussia ↗</a></h4>
+    <div class="tags"><span class="tag">Pub</span><span class="tag">Town Quay</span><span class="tag">British</span></div>
+    <p>Historic pub right on Town Quay — proper British food done brilliantly, with great ales and lovely estuary views. A Fowey classic.</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://havenersfowey.co.uk/" target="_blank" style="color:var(--text);text-decoration:none;">Havener's Bar & Grill ↗</a></h4>
+    <div class="tags"><span class="tag">Bar & Grill</span><span class="tag">Waterfront</span><span class="tag">St Austell Ales</span></div>
+    <p>Waterside bar and grill on Town Quay with one of the best views in Fowey. Seasonal pub classics, local seafood and excellent St Austell ales.</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://samphirefowey.co.uk/" target="_blank" style="color:var(--text);text-decoration:none;">Samphire ↗</a></h4>
+    <div class="tags"><span class="tag">Fine Dining</span><span class="tag">Waterfront</span><span class="tag">Seasonal</span></div>
+    <p>Relaxed coastal fine dining at The Old Quay House. Panoramic water views, exceptional Cornish produce and a beautifully seasonal menu. Book ahead.</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://sunnyspice.com/" target="_blank" style="color:var(--text);text-decoration:none;">Sunny Spice ↗</a></h4>
+    <div class="tags"><span class="tag">Indian</span><span class="tag">South Indian</span><span class="tag">Fore Street</span></div>
+    <p>Wonderful South Indian food on Fore Street — a real local favourite. Contemporary Indian cooking with fresh Cornish ingredients.</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://samscornwall.co.uk/on-the-beach/" target="_blank" style="color:var(--text);text-decoration:none;">Sam's on the Beach, Polkerris ↗</a></h4>
+    <div class="tags"><span class="tag">Lunch & Dinner</span><span class="tag">Seafood</span><span class="tag">Beach</span></div>
+    <p>Right on the beach at Polkerris in a restored RNLI lifeboat house — amazing seafood, wood-fired pizza and brilliant burgers. Walk there via the coast path for bonus points.</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://app.tablein.com/booking/crown-inn-0" target="_blank" style="color:var(--text);text-decoration:none;">The Crown Inn, Lanlivery ↗</a></h4>
+    <div class="tags"><span class="tag">Pub</span><span class="tag">10 mins drive</span><span class="tag">Cornish</span></div>
+    <p>One of Cornwall's oldest and most loved pubs — a gorgeous stone inn in the village of Lanlivery, 10 mins away. Cracking Cornish food and real ales. Well worth the trip.</p>
+  </div>
   <div class="tip"><strong>Cornwall tip:</strong> For the best pasties in Fowey, head to the local bakeries — see our Bakeries section below!</div>
 </section>
+
+<!-- COFFEE -->
 <section class="section" id="coffee">
   <div class="section-header"><span class="section-icon">☕</span><h2>Coffee & Cafés</h2></div>
-  <div class="place-card"><h4><a href="https://maps.google.com/?q=Brown+Sugar+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">Brown Sugar ↗</a></h4><div class="tags"><span class="tag">Coffee</span><span class="tag">Breakfast</span></div><p>[Your description here]</p></div>
-  <div class="place-card"><h4><a href="https://maps.google.com/?q=Olive+Branch+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">Olive Branch ↗</a></h4><div class="tags"><span class="tag">Coffee</span><span class="tag">Café</span></div><p>[Your description here]</p></div>
-  <div class="place-card"><h4><a href="https://maps.google.com/?q=The+Red+Rocket+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">The Red Rocket ↗</a></h4><div class="tags"><span class="tag">Coffee</span><span class="tag">Café</span></div><p>[Your description here]</p></div>
-  <div class="place-card"><h4><a href="https://maps.google.com/?q=Readymoney+Beach+Shop+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">Readymoney Beach Shop ↗</a></h4><div class="tags"><span class="tag">Beach Café</span><span class="tag">Readymoney Cove</span></div><p>[Your description here]</p></div>
+  <div class="place-card">
+    <h4><a href="https://maps.google.com/?q=Brown+Sugar+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">Brown Sugar ↗</a></h4>
+    <div class="tags"><span class="tag">Coffee</span><span class="tag">Breakfast</span></div>
+    <p>[Your description here]</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://maps.google.com/?q=Olive+Branch+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">Olive Branch ↗</a></h4>
+    <div class="tags"><span class="tag">Coffee</span><span class="tag">Café</span></div>
+    <p>[Your description here]</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://maps.google.com/?q=The+Red+Rocket+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">The Red Rocket ↗</a></h4>
+    <div class="tags"><span class="tag">Coffee</span><span class="tag">Café</span></div>
+    <p>[Your description here]</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://maps.google.com/?q=Readymoney+Beach+Shop+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">Readymoney Beach Shop ↗</a></h4>
+    <div class="tags"><span class="tag">Beach Café</span><span class="tag">Readymoney Cove</span></div>
+    <p>[Your description here]</p>
+  </div>
 </section>
+
+<!-- BAKERIES -->
 <section class="section" id="bakeries">
   <div class="section-header"><span class="section-icon">🥐</span><h2>Bakeries</h2></div>
   <p style="margin-bottom: 18px; color: var(--text-light); font-style: italic;">For the best Cornish pasties and fresh bakes — go local!</p>
-  <div class="place-card"><h4><a href="https://maps.google.com/?q=Quay+Bakery+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">Quay Bakery ↗</a></h4><div class="tags"><span class="tag">Pasties</span><span class="tag">Fresh Bakes</span></div><p>[Your description here]</p></div>
-  <div class="place-card"><h4><a href="https://maps.google.com/?q=Niles+Bakery+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">Niles Bakery ↗</a></h4><div class="tags"><span class="tag">Pasties</span><span class="tag">Fresh Bakes</span></div><p>[Your description here]</p></div>
+  <div class="place-card">
+    <h4><a href="https://maps.google.com/?q=Quay+Bakery+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">Quay Bakery ↗</a></h4>
+    <div class="tags"><span class="tag">Pasties</span><span class="tag">Fresh Bakes</span></div>
+    <p>[Your description here]</p>
+  </div>
+  <div class="place-card">
+    <h4><a href="https://maps.google.com/?q=Niles+Bakery+Fowey+Cornwall" target="_blank" style="color:var(--text);text-decoration:none;">Niles Bakery ↗</a></h4>
+    <div class="tags"><span class="tag">Pasties</span><span class="tag">Fresh Bakes</span></div>
+    <p>[Your description here]</p>
+  </div>
 </section>
+
+<!-- WI-FI -->
 <section class="section" id="wifi">
   <div class="section-header"><span class="section-icon">📶</span><h2>Wi-Fi & Practical Info</h2></div>
   <div class="card">
     <div class="info-row"><span class="label">Network Name</span><span class="value">42 Esplanade</span></div>
     <div class="info-row"><span class="label">Password</span><span class="value">Flat22022</span></div>
-    <div class="info-row"><span class="label">Router location</span><span class="value">Utility room — cupboard on left, top compartment</span></div>
+    <div class="info-row"><span class="label">Router location</span><span class="value">Utility room — cupboard on left as you walk in, top compartment</span></div>
   </div>
   <div class="card">
-    <h3>Bins & Recycling</h3>
-    <ul>
-      <li>General waste: <strong>[DAY]</strong> — black bin bags left outside by [TIME]</li>
-      <li>Recycling: <strong>[DAY]</strong> — blue/green boxes on the pavement</li>
+    <h3>🗑️ Bins & Recycling — Collection Day: Thursday</h3>
+    <p style="margin-bottom:12px;">There are two types of collection. Check <a href="https://www.cornwall.gov.uk/media/luvceqla/thufort2new.pdf" target="_blank" style="color:var(--blue-deep);">what's collected each week ↗</a> (Cornwall Council schedule).</p>
+    <p><strong>General Waste</strong></p>
+    <ul style="margin: 6px 0 14px 0;">
+      <li>Put waste in a <strong>black bin bag</strong></li>
+      <li>Place in the rubbish collection area at the bottom of the steps — where the steps meet the Esplanade, turn right, lift the slanted metal lid, and place inside</li>
     </ul>
+    <p><strong>Recycling</strong></p>
+    <ul style="margin: 6px 0 14px 0;">
+      <li>Use the <strong>coloured canvas sacks</strong> in the wooden locker directly outside the front door</li>
+      <li>On the evening before collection: take the sack for that week's collection and place it <strong>above</strong> the rubbish area at the bottom of the steps (i.e. above the slanted metal lid)</li>
+    </ul>
+    <div class="tip"><strong>Thank you</strong> for helping keep the flat tidy for the next guests!</div>
   </div>
 </section>
+
+<!-- APPLIANCES -->
 <section class="section" id="appliances">
   <div class="section-header"><span class="section-icon">🍳</span><h2>Kitchen & Appliances</h2></div>
-  <div class="card"><h3>Cooker & Hob</h3><p>We have a <strong>[MAKE/MODEL]</strong>.</p><ol class="steps"><li>[Step 1]</li><li>[Step 2]</li><li>Always make sure everything is turned off when you leave the kitchen</li></ol></div>
-  <div class="card-grid">
-    <div class="card"><h3>☕ Coffee Machine</h3><p>[MAKE/MODEL]</p><ol class="steps"><li>[Step 1]</li><li>[Step 2]</li></ol></div>
-    <div class="card"><h3>🥤 Dishwasher</h3><p>[MAKE/MODEL]</p><ol class="steps"><li>Tablets are under the sink</li><li>Run a load before you leave if it's full — thank you!</li></ol></div>
+  <div class="card">
+    <h3>Cooker & Hob</h3>
+    <p>We have a <strong>[MAKE/MODEL]</strong>.</p>
+    <ol class="steps">
+      <li>[Step 1]</li>
+      <li>[Step 2]</li>
+      <li>Always make sure everything is turned off when you leave the kitchen</li>
+    </ol>
   </div>
   <div class="card-grid">
-    <div class="card"><h3>🫧 Washing Machine</h3><p>Located in the <strong>[LOCATION]</strong>. Detergent is on the shelf above.</p></div>
-    <div class="card"><h3>📺 TV & Streaming</h3><p>Smart TV with Netflix, BBC iPlayer and Apple TV. Netflix login: see the card on the fridge.</p></div>
+    <div class="card">
+      <h3>🚰 Quooker Boiling Water Tap</h3>
+      <p>The kitchen has a <strong>Quooker</strong> tap which provides instant boiling water.</p>
+      <ol class="steps">
+        <li>The Quooker is the tap next to the main kitchen tap</li>
+        <li>To get boiling water: <strong>push the handle down and turn at the same time</strong> — this is a safety feature to prevent accidents</li>
+        <li>Be careful — the water is 100°C. Keep children away</li>
+        <li>The cold and warm water settings work like a normal tap</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>🥤 Dishwasher</h3>
+      <p>[MAKE/MODEL]</p>
+      <ol class="steps"><li>Tablets are under the sink</li><li>Run a load before you leave if it's full — thank you!</li></ol>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>🫧 Washing Machine & Dryer</h3>
+      <p>Both are located in the <strong>utility room</strong>. Detergent is on the shelf above. <a href="https://www.google.com/search?q=washing+machine+instructions" target="_blank" style="color:var(--blue-deep);">[Link to instructions — add when available]</a></p>
+    </div>
+    <div class="card">
+      <h3>📺 TV & Streaming</h3>
+      <p>Smart TV with Netflix, BBC iPlayer and Apple TV. Netflix login: see the card on the fridge.</p>
+    </div>
   </div>
 </section>
+
+<!-- HEATING -->
 <section class="section" id="heating">
   <div class="section-header"><span class="section-icon">🌡️</span><h2>Heating</h2></div>
-  <div class="card"><h3>Central Heating</h3><p>The thermostat is located in the <strong>[ROOM]</strong>.</p><div class="tip"><strong>Please:</strong> Don't set the heating above 21°C. If going out for the day, turn it down to around 16°C rather than off.</div></div>
-  <div class="card"><h3>Hot Water</h3><p>[DESCRIBE hot water setup here]</p></div>
+  <div class="card">
+    <h3>Central Heating</h3>
+    <ul style="margin-top: 8px;">
+      <li>The heating is <strong>automatically controlled</strong> via a remote app — it will generally look after itself</li>
+      <li>There are <strong>thermostats in every room</strong> which you can manually adjust higher or lower to suit your comfort</li>
+    </ul>
+    <div class="tip"><strong>If the flat feels warm:</strong> Because of all the windows, the flat can get quite warm. The best way to cool things down a little is simply to <strong>open a window by a few centimetres</strong>.</div>
+  </div>
 </section>
+
+<!-- SONOS -->
 <section class="section" id="sonos">
   <div class="section-header"><span class="section-icon">🎵</span><h2>Sonos Music System</h2></div>
-  <div class="card"><h3>Playing music</h3><ol class="steps"><li>Download the free <strong>Sonos app</strong> on your phone</li><li>Connect to the flat's Wi-Fi (<strong>42 Esplanade</strong>)</li><li>Open the app — it will find the speakers automatically</li><li>Choose a room and play from Spotify, Apple Music, BBC Sounds etc.</li></ol></div>
+  <div class="card">
+    <h3>Playing music</h3>
+    <ol class="steps">
+      <li>Download the free <strong>Sonos app</strong> on your phone</li>
+      <li>Connect to the flat's Wi-Fi (<strong>42 Esplanade</strong>)</li>
+      <li>Open the app — it will find the speakers automatically</li>
+      <li>Choose a room and play from Spotify, Apple Music, BBC Sounds etc.</li>
+    </ol>
+  </div>
 </section>
+
+<!-- HOUSE RULES -->
 <section class="section" id="rules">
   <div class="section-header"><span class="section-icon">📋</span><h2>House Rules</h2></div>
   <p style="margin-bottom: 18px; color: var(--text-light); font-style: italic;">We want you to feel completely at home — these are just a few things that help us keep the flat lovely for everyone.</p>
   <div class="card">
     <ul class="rules-list">
+      <li><span class="rule-icon">🍽️</span><span><strong>No food or drinks outside the kitchen.</strong></span></li>
       <li><span class="rule-icon">🚬</span><span><strong>No smoking inside the flat.</strong></span></li>
-      <li><span class="rule-icon">🔊</span><span><strong>Please be mindful of neighbours</strong>, especially after 10pm.</span></li>
       <li><span class="rule-icon">🔑</span><span><strong>Always return the key to the key box</strong> and scramble the code when leaving.</span></li>
-      <li><span class="rule-icon">🪟</span><span><strong>Close all windows when you go out.</strong></span></li>
       <li><span class="rule-icon">🧹</span><span><strong>Leave the flat tidy.</strong> Wash up, empty bins, and strip the beds if you're the last to leave.</span></li>
+      <li><span class="rule-icon">🪟</span><span><strong>Put the blinds down before you leave</strong> — this helps keep the flat cool and protects the furnishings.</span></li>
+      <li><span class="rule-icon">🔊</span><span><strong>Please be mindful of neighbours</strong>, especially after 10pm.</span></li>
       <li><span class="rule-icon">💧</span><span><strong>Report any issues</strong> straight away — contact Adam or Tamsin.</span></li>
     </ul>
   </div>
 </section>
+
+<!-- EMERGENCY BAR -->
 <div class="emergency-bar">
   🆘 &nbsp;<strong>Emergencies:</strong> &nbsp;999 for police/fire/ambulance &nbsp;|&nbsp; NHS 111 for urgent medical advice &nbsp;|&nbsp; Contact us: <a href="tel:[YOUR PHONE]">[YOUR PHONE NUMBER]</a>
 </div>
+
+<!-- FOOTER -->
 <footer>
   <p><strong>Flat 2, 42 Esplanade</strong> &nbsp;·&nbsp; Fowey, Cornwall</p>
   <p style="margin-top: 8px;">We hope you have a wonderful stay. 🌊</p>
   <p style="margin-top: 12px; font-size: 0.78rem; opacity: 0.6;">Questions? Contact Adam or Tamsin</p>
 </footer>
-</div>
 
-<script>
-  const SITE_PASSWORD = "Fowey42";
-  function checkPassword() {
-    const input = document.getElementById('pwd-input').value;
-    if (input === SITE_PASSWORD) {
-      document.getElementById('password-screen').style.display = 'none';
-      document.getElementById('main-content').style.display = 'block';
-    } else {
-      document.getElementById('pwd-error').style.display = 'block';
-      document.getElementById('pwd-input').value = '';
-    }
-  }
-</script>
 </body>
 </html>

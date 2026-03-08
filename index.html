@@ -21,6 +21,15 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Calibri', 'Gill Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+    #password-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: var(--cream); padding: 24px; }
+    #password-screen h2 { font-size: 1.8rem; font-weight: normal; color: var(--blue-deep); margin-bottom: 8px; }
+    #password-screen p { color: var(--text-light); font-style: italic; margin-bottom: 24px; }
+    #password-screen input { font-family: 'Calibri', sans-serif; font-size: 1rem; padding: 12px 16px; border: 2px solid var(--sand-dark); border-radius: 8px; width: 260px; margin-bottom: 12px; outline: none; text-align: center; letter-spacing: 0.1em; }
+    #password-screen input:focus { border-color: var(--blue-mid); }
+    #password-screen button { background: var(--blue-deep); color: white; border: none; border-radius: 8px; padding: 12px 32px; font-size: 1rem; font-family: 'Calibri', sans-serif; cursor: pointer; width: 260px; }
+    #password-screen button:hover { background: var(--blue-mid); }
+    #password-screen .error { color: var(--rule-red); font-size: 0.9rem; margin-top: 8px; display: none; }
+    #main-content { display: none; }
     header { position: relative; overflow: hidden; text-align: center; padding: 360px 24px 320px; color: var(--white); }
     .header-bg { position: absolute; inset: 0; background-image: url('./fowey.jpg'); background-size: cover; background-position: center; z-index: 0; }
     .header-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.12); z-index: 1; }
@@ -80,6 +89,17 @@
   </style>
 </head>
 <body>
+
+<div id="password-screen">
+  <span style="font-size:2.5rem;margin-bottom:16px;">🌊</span>
+  <h2>Flat 2, 42 Esplanade</h2>
+  <p>Fowey, Cornwall — Guest Guide</p>
+  <input type="password" id="pwd-input" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkPassword()" />
+  <button onclick="checkPassword()">Enter</button>
+  <p class="error" id="pwd-error">Incorrect password — please try again</p>
+</div>
+
+<div id="main-content">
 <header>
   <div class="header-bg"></div>
   <div class="header-overlay"></div>
@@ -141,26 +161,10 @@
 <section class="section" id="walks">
   <div class="section-header"><span class="section-icon">🥾</span><h2>Best Walks Nearby</h2></div>
   <p style="margin-bottom: 18px; color: var(--text-light); font-style: italic;">Fowey sits on the South West Coast Path — some of the most spectacular walking in England is right on your doorstep.</p>
-  <div class="place-card green">
-    <h4>Fowey to Polkerris — Coastal Path</h4>
-    <div class="tags"><span class="tag green-tag">4.5 miles</span><span class="tag green-tag">Moderate</span></div>
-    <p>Head west along the coast path from Readymoney Cove through dramatic cliff scenery to the lovely harbour at Polkerris. Grab a pasty at Sam's on the Beach.</p>
-  </div>
-  <div class="place-card green">
-    <h4>Hall Walk — Fowey Estuary Circular</h4>
-    <div class="tags"><span class="tag green-tag">4 miles circular</span><span class="tag green-tag">Easy–Moderate</span><span class="tag green-tag">Family-friendly</span></div>
-    <p>Take the passenger ferry to Polruan, walk through the woods along Hall Walk with stunning estuary views, descend to Bodinnick, and take the car ferry back.</p>
-  </div>
-  <div class="place-card green">
-    <h4>Readymoney Cove & St Catherine's Castle</h4>
-    <div class="tags"><span class="tag green-tag">1.5 miles</span><span class="tag green-tag">Easy</span></div>
-    <p>A gentle stroll down to the pretty sandy cove at Readymoney, then up to the Tudor fort for panoramic views of the harbour mouth.</p>
-  </div>
-  <div class="place-card green">
-    <h4>Fowey to Lostwithiel — River Walk</h4>
-    <div class="tags"><span class="tag green-tag">6 miles one way</span><span class="tag green-tag">Easy</span></div>
-    <p>Follow the Fowey river upstream through tidal creeks and ancient woodland to historic Lostwithiel. Train back from Lostwithiel to Par.</p>
-  </div>
+  <div class="place-card green"><h4>Fowey to Polkerris — Coastal Path</h4><div class="tags"><span class="tag green-tag">4.5 miles</span><span class="tag green-tag">Moderate</span></div><p>Head west along the coast path from Readymoney Cove through dramatic cliff scenery to the lovely harbour at Polkerris. Grab a pasty at Sam's on the Beach.</p></div>
+  <div class="place-card green"><h4>Hall Walk — Fowey Estuary Circular</h4><div class="tags"><span class="tag green-tag">4 miles circular</span><span class="tag green-tag">Easy–Moderate</span><span class="tag green-tag">Family-friendly</span></div><p>Take the passenger ferry to Polruan, walk through the woods along Hall Walk with stunning estuary views, descend to Bodinnick, and take the car ferry back.</p></div>
+  <div class="place-card green"><h4>Readymoney Cove & St Catherine's Castle</h4><div class="tags"><span class="tag green-tag">1.5 miles</span><span class="tag green-tag">Easy</span></div><p>A gentle stroll down to the pretty sandy cove at Readymoney, then up to the Tudor fort for panoramic views of the harbour mouth.</p></div>
+  <div class="place-card green"><h4>Fowey to Lostwithiel — River Walk</h4><div class="tags"><span class="tag green-tag">6 miles one way</span><span class="tag green-tag">Easy</span></div><p>Follow the Fowey river upstream through tidal creeks and ancient woodland to historic Lostwithiel. Train back from Lostwithiel to Par.</p></div>
 </section>
 <section class="section" id="activities">
   <div class="section-header"><span class="section-icon">🏄</span><h2>Activities</h2></div>
@@ -170,6 +174,8 @@
     <div class="place-card accent" style="border-radius:8px"><h4>🏄 Water Sports</h4><div class="tags"><span class="tag accent-tag">Adventure</span></div><p>Kayak and paddleboard hire from Town Quay. Sailing and SUP from Polkerris beach.</p></div>
     <div class="place-card accent" style="border-radius:8px"><h4>🌿 Eden Project</h4><div class="tags"><span class="tag accent-tag">Day Out</span><span class="tag accent-tag">20 mins</span></div><p>The world-famous biomes are about 20 minutes away. Book tickets in advance. <em>edenproject.com</em></p></div>
     <div class="place-card accent" style="border-radius:8px"><h4>🪂 Adrenaline Quarry</h4><div class="tags"><span class="tag accent-tag">Thrills</span><span class="tag accent-tag">20 mins</span></div><p>Zip lines, giant swings and adventure activities at a stunning flooded quarry near Liskeard. Great for families and thrill-seekers. <em>adrenalinequarry.co.uk</em></p></div>
+    <div class="place-card accent" style="border-radius:8px"><h4>🧗 Tide Climbing</h4><div class="tags"><span class="tag accent-tag">Climbing</span><span class="tag accent-tag">Outdoor</span></div><p>Sea cliff climbing experiences on Cornwall's stunning coastline. Suitable for beginners and experienced climbers alike. <em>tideclimbing.co.uk</em></p></div>
+    <div class="place-card accent" style="border-radius:8px"><h4>🌸 Duchy Nursery</h4><div class="tags"><span class="tag accent-tag">Garden</span><span class="tag accent-tag">Lostwithiel</span></div><p>A beautiful plant nursery near Lostwithiel — well worth a visit for garden lovers. Lovely setting with a great café. <em>duchynursery.co.uk</em></p></div>
     <div class="place-card accent" style="border-radius:8px"><h4>⛵ Boat Trips</h4><div class="tags"><span class="tag accent-tag">Boat</span></div><p>Estuary trips and seal-spotting tours from Town Quay. Check the board on arrival.</p></div>
     <div class="place-card accent" style="border-radius:8px"><h4>🏛️ Lanhydrock House</h4><div class="tags"><span class="tag accent-tag">National Trust</span><span class="tag accent-tag">25 mins</span></div><p>Magnificent Victorian country house near Bodmin. Wonderful gardens and great café. <em>nationaltrust.org.uk</em></p></div>
   </div>
@@ -260,5 +266,20 @@
   <p style="margin-top: 8px;">We hope you have a wonderful stay. 🌊</p>
   <p style="margin-top: 12px; font-size: 0.78rem; opacity: 0.6;">Questions? Contact Adam or Tamsin</p>
 </footer>
+</div>
+
+<script>
+  const SITE_PASSWORD = "Fowey42";
+  function checkPassword() {
+    const input = document.getElementById('pwd-input').value;
+    if (input === SITE_PASSWORD) {
+      document.getElementById('password-screen').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    } else {
+      document.getElementById('pwd-error').style.display = 'block';
+      document.getElementById('pwd-input').value = '';
+    }
+  }
+</script>
 </body>
 </html>

@@ -44,7 +44,7 @@
     .header-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(160deg, rgba(42,107,138,0.75) 0%, rgba(74,155,190,0.65) 60%, rgba(92,179,212,0.55) 100%);
+      background: linear-gradient(160deg, rgba(42,107,138,0.35) 0%, rgba(74,155,190,0.25) 60%, rgba(92,179,212,0.20) 100%);
       z-index: 1;
     }
     header::after {
@@ -143,11 +143,7 @@
     .card p, .card li { font-size: 0.95rem; color: var(--text); }
     .card ul, .card ol { padding-left: 20px; margin-top: 8px; }
     .card li { margin-bottom: 5px; }
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
     .keybox-box {
       background: var(--blue-deep);
@@ -157,14 +153,7 @@
       text-align: center;
       margin-bottom: 16px;
     }
-    .keybox-box .kb-label {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      opacity: 0.8;
-      margin-bottom: 6px;
-    }
+    .keybox-box .kb-label { font-family: 'Arial', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8; margin-bottom: 6px; }
     .keybox-box .kb-location { font-size: 1.1rem; margin-bottom: 20px; font-style: italic; }
     .kb-code-row { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 8px; }
     .kb-code-label { font-family: 'Arial', sans-serif; font-size: 0.85rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.08em; }

@@ -30,7 +30,7 @@
       position: relative;
       overflow: hidden;
       text-align: center;
-      padding: 100px 24px 80px;
+      padding: 180px 24px 160px;
       color: var(--white);
     }
     .header-bg {
@@ -104,55 +104,19 @@
       transition: border-color 0.2s, color 0.2s;
     }
     nav a:hover { border-bottom-color: var(--accent); color: var(--accent); }
-    .section {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 52px 24px 20px;
-    }
-    .section + .section {
-      border-top: 1px solid var(--sand-dark);
-      margin-top: 8px;
-    }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 22px;
-    }
+    .section { max-width: 860px; margin: 0 auto; padding: 52px 24px 20px; }
+    .section + .section { border-top: 1px solid var(--sand-dark); margin-top: 8px; }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
     .section-icon { font-size: 2rem; flex-shrink: 0; }
-    .section-header h2 {
-      font-size: 1.7rem;
-      font-weight: normal;
-      color: var(--blue-deep);
-    }
-    .card {
-      background: var(--white);
-      border: 1px solid var(--sand-dark);
-      border-radius: 12px;
-      padding: 22px 24px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    .card h3 {
-      font-size: 1.1rem;
-      color: var(--blue-deep);
-      margin-bottom: 8px;
-      font-weight: bold;
-      font-family: 'Arial', sans-serif;
-    }
+    .section-header h2 { font-size: 1.7rem; font-weight: normal; color: var(--blue-deep); }
+    .card { background: var(--white); border: 1px solid var(--sand-dark); border-radius: 12px; padding: 22px 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .card h3 { font-size: 1.1rem; color: var(--blue-deep); margin-bottom: 8px; font-weight: bold; font-family: 'Arial', sans-serif; }
     .card p, .card li { font-size: 0.95rem; color: var(--text); }
     .card ul, .card ol { padding-left: 20px; margin-top: 8px; }
     .card li { margin-bottom: 5px; }
     .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
-    .keybox-box {
-      background: var(--blue-deep);
-      color: var(--white);
-      border-radius: 12px;
-      padding: 24px;
-      text-align: center;
-      margin-bottom: 16px;
-    }
+    .keybox-box { background: var(--blue-deep); color: var(--white); border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 16px; }
     .keybox-box .kb-label { font-family: 'Arial', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8; margin-bottom: 6px; }
     .keybox-box .kb-location { font-size: 1.1rem; margin-bottom: 20px; font-style: italic; }
     .kb-code-row { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 8px; }
